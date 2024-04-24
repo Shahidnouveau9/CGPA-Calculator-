@@ -1,33 +1,26 @@
 #include <iostream>
 using namespace std;
 
-float cgpa(int total_points, int no_of_subjects)
- { 
-  return total_points / 9.5 * no_of_subjects;
-  }
-     
-int main()
-  {
-    int no_of_subjects;
-    double marks,total_points=0,total_credits=0,cgpa_value=0;
-  
-    cout << "Enter the no of subjects :";
-    cin>> no_of_subjects;
-    
-   for(int i=1;i<=no_of_subjects;i++)
-      {
-       cout<<"Enter the marks of subjects "<< i <<" :";
-       cin>>marks;    
-       
-       total_points+=marks;
-     
-       }
-      
-       cgpa_value = cgpa(total_points,no_of_subjects);
-  
-     cout<<"Your CGPA is : "<<cgpa_value;
-  cout<<"*--------------------------*";
-    return 0;
+float cgpa(double total_points, int no_of_subjects) {
+    return total_points / (9.5 * no_of_subjects);
 }
 
-  
+int main() {
+    int no_of_subjects;
+    double marks, total_points = 0, cgpa_value = 0;
+
+    cout << "Enter the no of subjects: ";
+    cin >> no_of_subjects;
+
+    for (int i = 1; i <= no_of_subjects; i++) {
+        cout << "Enter the marks of subject " << i << ": ";
+        cin >> marks;
+        total_points += marks;
+    }
+
+    cgpa_value = cgpa(total_points, no_of_subjects);
+
+    cout << "Your CGPA is: " << cgpa_value << endl;
+    cout << "*--------------------------*" << endl;
+    return 0;
+}
